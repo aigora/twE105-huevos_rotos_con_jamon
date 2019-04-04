@@ -1,6 +1,5 @@
 Maps ETSIDI
 
-Descripción:
 
 Programa que pretende ayudar al alumno a saber orientarse por la escuela, enfocado a guiar al alumno durante los primeros dias de carrera.
 
