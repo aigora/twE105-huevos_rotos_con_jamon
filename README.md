@@ -1,17 +1,17 @@
-###Maps ETSIDI
+### Maps ETSIDI
 
 
 Programa concebido para ayudar al alumno a saber orientarse por la escuela, enfocado a guiar al alumno durante los primeros dias de carrera.
 
 
-##**Integrantes**:
+## **Integrantes**:
 
-Diego Junquera (@Djunquera)
-Alfonso Balao (@abalao)
-Lucas De Sarria (@lucas290500)
+- Diego Junquera (@Djunquera)
+- Alfonso Balao (@abalao)
+- Lucas De Sarria (@lucas290500)
 
 
-##**Objetivos del trabajo**:
+## **Objetivos del trabajo**:
 
 Desarrollar un programa capaz de ayudar al alumno a orientarse en la escuela, especialmente a los nuevos alumnos.
 Interrelacionando espacios, horarios y servicios, el alumno podra saber en todo momento qué clase va a tener, donde podra calentar la comida, donde estan los baños más cercano o la ruta más fácil para llegar a la terraza para jugar al mus. 
