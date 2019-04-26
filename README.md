@@ -1,7 +1,7 @@
 # Maps ETSIDI
 
 
-Programa concebido para ayudar al alumno a saber orientarse por la escuela, enfocado a guiar al alumno durante los primeros dias de carrera.
+Programa concebido para ayudar al alumno a saber orientarse por la escuela, enfocado a guiar al alumno durante los primeros días de carrera.
 
 
 ## **Integrantes**:
@@ -18,9 +18,9 @@ Interrelacionando espacios, horarios y servicios, el alumno podra saber en todo 
 
 - **Planos**: 5 pisos. edificios A, B y C.
 
-- **Registro**: Mediante un cuadro de diálogo en el que se  registrará mediante nombre, apellidos, clase, grupo y contraseña. Se le asignará su propio horario.(se realizará una base de datos en el que figuren los horarios).
+- **Registro**: Mediante un cuadro de diálogo en el que se registrará mediante nombre, apellidos, clase, grupo y contraseña. Se le asignará su propio horario.(se realizará una base de datos en el que figuren los horarios).
 
-- **Horario**: El programa tendrá un reloj asignado en función de la hora y el día de manera que sabrá decirle al alumno qué clase y dónde la tiene. También podrá ver la hora siguiente que le toca mientras aunque no haya terminado la clase anterior.
+- **Horario**: El programa tendrá un reloj asignado en función de la hora y el día de manera que podrá decirle al alumno qué clase tiene y dónde está el aula. También podrá ver la hora siguiente que le toca mientras aunque no haya terminado la clase anterior.
 
 - **Caminos**: Se podrá elegir si la ruta se usarán atajos entre otras opciones.
 
