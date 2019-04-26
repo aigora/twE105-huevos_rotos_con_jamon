@@ -20,10 +20,8 @@ Interrelacionando espacios, horarios y servicios, el alumno podra saber en todo 
 
 - **Registro**: Mediante un cuadro de diálogo en el que se registrará mediante nombre, apellidos, clase, grupo y contraseña. Se le asignará su propio horario.(se realizará una base de datos en el que figuren los horarios).
 
-- **Horario**: El programa tendrá un reloj asignado en función de la hora y el día de manera que podrá decirle al alumno qué clase tiene y dónde está el aula. También podrá ver la hora siguiente que le toca mientras aunque no haya terminado la clase anterior.
+- **Horario**: El programa tendrá un reloj asignado en función de la hora y el día de manera que podrá decirle al alumno qué clase tiene y dónde está el aula.
 
-- **Caminos**: Se podrá elegir si la ruta se usarán atajos entre otras opciones.
-
-- **Base de datos**: El programa guarda tu registro, con lo que la próxima vez que lo uses solo tendrás que decir tu nombre y una contraseña
+- **Base de datos**: El programa guarda tu registro, la próxima vez que lo uses solo tendrás que decir tu nombre y una contraseña.
 
     
