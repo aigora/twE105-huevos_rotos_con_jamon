@@ -85,7 +85,7 @@ pf2 = fopen("C:/Users/Diego/Desktop/trabajo/longitudstrings.txt", "a");
 	
 int seleccioncarrera(usuario a,FILE *pf){
 
-	//selecci髇 de la carrera cursada en la universidad(primer a駉 solo)
+	//selecci贸n de la carrera cursada en la universidad(primer a帽o solo)
 	do{	
 	system("cls");
 	printf("Por ultimo, cual es tu carrera?\n\n\t\t(1)Electrica\t(2)Mecanica\t(3)Quimica Industrial\n\t\t(4)Diseno industrial y desarollo de producto\t(5)Electronica\n");
@@ -102,10 +102,10 @@ pf = fopen("C:/Users/Diego/Desktop/trabajo/carreras.txt", "a");
 	
 int	matriculaexistente(usuario a,contenido f,opciones m,int *x,FILE *pf){
 
-	/*volvemos a poner posicion dentro de la funci髇 para que se entienda mejor*/
+	/*volvemos a poner posicion dentro de la funci贸n para que se entienda mejor*/
 		int j=0,n=0,posicion; 
 	
-	printf("Introduce tu numero de matricula");
+	printf("Introduce tu numero de matricula\t");
 	scanf("%i",&a.matricula);
 	
 		pf = fopen("C:/Users/Diego/Desktop/trabajo/matriculas.txt", "r");
@@ -122,13 +122,13 @@ else
 		
 	if(f.matricula[j]!=a.matricula)
 	{
-		/*a馻dimos un n el cual se suma 1 a si mismo cada vez que la matricula de inicio de sesion
+		/*a帽adimos un n el cual se suma 1 a si mismo cada vez que la matricula de inicio de sesion
 		 no concuerda con ninguna  matricula registrada y guardada en el vector matricula*/
 		n++;
 	}
-	/*Este else solo puede repetirse una vez m醲imo por que no hay dos matriculas iguales,
-	entonces la matricula correpondiente se haya en esta posici髇 j y podremos determinar toda
-	 la demas informaci髇 del usuario gracias a esta posici髇*/
+	/*Este else solo puede repetirse una vez m谩ximo por que no hay dos matriculas iguales,
+	entonces la matricula correpondiente se haya en esta posici贸n j y podremos determinar toda
+	 la demas informaci贸n del usuario gracias a esta posici贸n*/
 	else posicion=j;
 		
 	}
@@ -153,7 +153,7 @@ int imprimir_datos_usuario(contenido f,int posicion,FILE *pf1,FILE *pf2,FILE *pf
 	
 	int suma1=0,suma2=0;
 			//usamos h para los siguientes "for"
-			int h;
+			int h=0;
 			pf2 = fopen("C:/Users/Diego/Desktop/trabajo/longitudstrings.txt", "r");
 			
 			
@@ -220,4 +220,74 @@ int imprimir_datos_usuario(contenido f,int posicion,FILE *pf1,FILE *pf2,FILE *pf
 					}
 							fclose(pf3);
 					getch();
+}
+
+clases(clase a,FILE *pf){
+	int h;
+	char lunes[10]="Monday",martes[10]="Tuesday",miercoles[10]="Wednesday",jueves[10]="Thursday",viernes[10]="Friday";
+
+
+/* funcion time que recibe como parametro un puntero nulo
+--> devuelve el tiempo en una variable de tipo time_t*/
+time_t t=time(0);
+/*funcion localtime recime como parametro un puntero 
+t de variable time_t --> devuelve un puntero (horalocal) hacia la estructura de tipo tm*/	
+struct tm *local=localtime(&t);
+//definimos una cadena de caracteres dodne se va a almacenar la informacion final
+char dia[10];
+  
+strftime(dia,9,"%A",local);
+
+	pf = fopen("C:/Users/Diego/Desktop/trabajo/clase.txt","r");
+				//Aqui es donde imprimimos uno por uno los caracteres del intervalo descrito anteriormente para el nombre del usuario
+			if (pf == NULL)
+	{// Si el resultado es NULL mensaje de error
+	printf("Error al abrir el fichero.\n");
+	return -1;
+	}
+	else
+	{
+		if ((strcmp(lunes,dia))==0){
+		
+				for(h=0;h<78;h++)
+			{
+					fscanf(pf,"%c,",&a.horario[h]);
+			
+				printf("%c",a.horario[h]);
+			}}
+		if ((strcmp(martes,dia))==0){
+		
+				for(h=0;h<158;h++)
+			{
+					fscanf(pf,"%c,",&a.horario[h]);
+			if(h>=79&&h<135) printf("%c",a.horario[h]);
+			}}
+		if ((strcmp(miercoles,dia))==0){
+		
+				for(h=0;h<500;h++)
+			{
+					fscanf(pf,"%c,",&a.horario[h]);
+			if(h>=135&&h<200) printf("%c",a.horario[h]);
+			}}
+				if ((strcmp(jueves,dia))==0){
+		
+				for(h=0;h<500;h++)
+			{
+					fscanf(pf,"%c,",&a.horario[h]);
+			if(h>=200&&h<272) printf("%c",a.horario[h]);
+			}}
+			if ((strcmp(viernes,dia))==0){
+		
+				for(h=0;h<500;h++)
+			{
+					fscanf(pf,"%c,",&a.horario[h]);
+			if(h>=272&&h<367) printf("%c",a.horario[h]);
+			}}
+			else
+			printf("Es fin de semana no tienes claseee!!!");
+
+			fclose(pf);
+			
+		}
+		getch();
 }
