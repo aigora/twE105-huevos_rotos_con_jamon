@@ -223,7 +223,7 @@ int imprimir_datos_usuario(contenido f,int posicion,FILE *pf1,FILE *pf2,FILE *pf
 }
 
 clases(clase a,FILE *pf){
-	int h;
+	int h,r=0;
 	char lunes[10]="Monday",martes[10]="Tuesday",miercoles[10]="Wednesday",jueves[10]="Thursday",viernes[10]="Friday";
 
 
@@ -247,43 +247,44 @@ strftime(dia,9,"%A",local);
 	}
 	else
 	{
-		if ((strcmp(lunes,dia))==0){
-		
+			if ((strcmp(lunes,dia))==0){
+		r=1;
 				for(h=0;h<78;h++)
 			{
 					fscanf(pf,"%c,",&a.horario[h]);
 			
 				printf("%c",a.horario[h]);
 			}}
-		if ((strcmp(martes,dia))==0){
-		
+			if ((strcmp(martes,dia))==0){
+		r=1;
 				for(h=0;h<158;h++)
 			{
 					fscanf(pf,"%c,",&a.horario[h]);
 			if(h>=79&&h<135) printf("%c",a.horario[h]);
 			}}
-		if ((strcmp(miercoles,dia))==0){
-		
+			if ((strcmp(miercoles,dia))==0){
+		r=1;
 				for(h=0;h<500;h++)
 			{
 					fscanf(pf,"%c,",&a.horario[h]);
 			if(h>=135&&h<200) printf("%c",a.horario[h]);
 			}}
 				if ((strcmp(jueves,dia))==0){
-		
+		r=1;
 				for(h=0;h<500;h++)
 			{
 					fscanf(pf,"%c,",&a.horario[h]);
 			if(h>=200&&h<272) printf("%c",a.horario[h]);
 			}}
 			if ((strcmp(viernes,dia))==0){
-		
+		r=1;
 				for(h=0;h<500;h++)
 			{
 					fscanf(pf,"%c,",&a.horario[h]);
 			if(h>=272&&h<367) printf("%c",a.horario[h]);
+			
 			}}
-			else
+			if(r=0)
 			printf("Es fin de semana no tienes claseee!!!");
 
 			fclose(pf);
