@@ -1,7 +1,7 @@
 
 typedef struct //estructura de nuevo usuario
 {
-	//el usuario debera dar su nombre,apellidos, nº de matricula y carrera
+	//el usuario debera dar su nombre,apellidos, nÂº de matricula y carrera
 	char nombre[30];
 	char apellido[50];
 	int matricula;
@@ -9,7 +9,7 @@ typedef struct //estructura de nuevo usuario
 	//longitud del nombre y apellido introducido por el usuario
 	int longiapellido,longinombre;
 	/*sumalongi corresponde a la suma de las longitudes del nombre y el apellido introducidos 
-	por el usuario (añadiendole 1 más correspondiente al espacio entre nombre e apellido)*/
+	por el usuario (aÃ±adiendole 1 mÃ¡s correspondiente al espacio entre nombre e apellido)*/
 	int sumalongi;
 }usuario;
 
@@ -17,7 +17,7 @@ typedef struct //estructura que va a servir para escanear el contenido de los fi
 {
 	//cadena de caracteres de nombres y apellidos --> registro[400]
 	char registro[400];
-	//vector de los números de matricula --> matricula[100]
+	//vector de los nÃºmeros de matricula --> matricula[100]
 	int matricula[100];
 	//vector de las carreras de cada alumno --> carrera[100]
 	int carrera[100];
@@ -35,7 +35,10 @@ typedef struct //estructura de las diferentes opciones de menu del programa
 	int opcionhorarios;
 }opciones;
 
-
+typedef struct
+{
+	char horario[2000];
+}clase;
 
 //funcion para comprobar si el usuario habia creado una cuenta anteriormente
 int verificamatricula(usuario a,contenido f,opciones m,int *h, FILE *pf);
@@ -44,13 +47,14 @@ int verificamatricula(usuario a,contenido f,opciones m,int *h, FILE *pf);
 //funcion para guardar el nombre e apellido del usuario en un fichero,y para  hacer la suma de las longitudes de nombre e apellido
 int guarda_nomb_apelli(usuario a,FILE *pf1,FILE *pf2);
 
-//función para guardar la carrera del usuario en un fichero
+//funciÃ³n para guardar la carrera del usuario en un fichero
 int seleccioncarrera(usuario a,FILE *pf);
 
-/*función para comprobar si la matricula introducida habia sido ya creada, y al mismo tiempo 
+/*funciÃ³n para comprobar si la matricula introducida habia sido ya creada, y al mismo tiempo 
 si existe dicha matricula asociar a esta el nombre, apellido, carrera del usuario correspondiente*/
 int matriculaexistente(usuario a,contenido f,opciones m,int *x, FILE *pf);
 
-//función que va a imprimir en pantalla las informaciones del usuario tal como su nombre e apellido y su carrera en la universidad
+//funciÃ³n que va a imprimir en pantalla las informaciones del usuario tal como su nombre e apellido y su carrera en la universidad
 int imprimir_datos_usuario(contenido f,int posicion,FILE *pf1,FILE *pf2,FILE *pf3);
 
+int clases(clase a,FILE *pf);
