@@ -37,7 +37,7 @@ typedef struct //estructura de las diferentes opciones de menu del programa
 
 typedef struct
 {
-	char horario[2000];
+	char tutorias[1000];
 }clase;
 
 //funcion para comprobar si el usuario habia creado una cuenta anteriormente
@@ -57,4 +57,4 @@ int matriculaexistente(usuario a,contenido f,opciones m,int *x, FILE *pf);
 //función que va a imprimir en pantalla las informaciones del usuario tal como su nombre e apellido y su carrera en la universidad
 int imprimir_datos_usuario(contenido f,int posicion,FILE *pf1,FILE *pf2,FILE *pf3);
 
-int clases(clase a,FILE *pf);
+int tutoria(clase a,FILE *pf);
