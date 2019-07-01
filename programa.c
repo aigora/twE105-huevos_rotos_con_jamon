@@ -59,7 +59,7 @@ switch(menu.opcion)
 	 al usuario al menu principal directamente*/
 	if(menu.opcion==1)
 	{
-	pf3 = fopen("C:/Users/Diego/Desktop/trabajo/matriculas.txt", "a");
+	pf3 = fopen("matriculas.txt", "a");
 		fprintf(pf3, "%i,",alumno.matricula);
 			fclose(pf3);
 	
@@ -123,8 +123,7 @@ switch(menu.opcion)
 							{
 							
 								system("cls");
-							clases(etsidi,pf5);
-							printf("");
+							printf("El programa muestra donde tiene clase el alumno \nen ese instante en un mapa");
 							getch();
 						}
 							break;
@@ -157,7 +156,7 @@ switch(menu.opcion)
 			case 3:
 				{
 					system("cls");
-					printf("Muestra los profesores y donde estan sus salas personales( los horarios tambien se pueden implementar),\ntambien se intentara mostrar en un mapa donde se encuentra dicha sala");
+					tutoria(etsidi,pf5);
 					getch();
 				}
 				break;
