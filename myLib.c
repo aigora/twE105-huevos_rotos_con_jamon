@@ -4,7 +4,7 @@
 
 int verificamatricula(usuario a,contenido f,opciones m,int *h, FILE *pf){
 int w=0;
-		pf = fopen("C:/Users/Diego/Desktop/trabajo/matriculas.txt", "r");
+		pf = fopen("matriculas.txt", "r");
 if (pf == NULL)
 {// Si el resultado es NULL mensaje de error
 printf("Error al abrir el fichero.\n");
@@ -40,7 +40,7 @@ return m.opcion;
 
 int guarda_nomb_apelli(usuario a,FILE *pf1,FILE *pf2)
 {
-		pf1 = fopen("C:/Users/Diego/Desktop/trabajo/nombre.txt", "a");
+		pf1 = fopen("nombre.txt", "a");
 	printf("Nombre:");
 	scanf("%29s",a.nombre);
 		if (pf1 == NULL)
@@ -53,7 +53,7 @@ int guarda_nomb_apelli(usuario a,FILE *pf1,FILE *pf2)
 			fclose(pf1);
 		}
 		
-	pf1 = fopen("C:/Users/Diego/Desktop/trabajo/nombre.txt", "a");
+	pf1 = fopen("nombre.txt", "a");
 	printf("Apellidos:");
 	scanf("%49s",a.apellido);
 		if (pf1 == NULL)
@@ -75,7 +75,7 @@ a.longinombre=strlen(a.apellido);
 
 a.sumalongi=(a.longinombre+a.longiapellido+1);//el +1 es contandole un espacio entre el nombre y el apellido
 
-pf2 = fopen("C:/Users/Diego/Desktop/trabajo/longitudstrings.txt", "a");
+pf2 = fopen("longitudstrings.txt", "a");
 		fprintf(pf2, "%i,",a.sumalongi);
 			fclose(pf2);
 
@@ -94,7 +94,7 @@ int seleccioncarrera(usuario a,FILE *pf){
 	(se queda pillado si se elige otra cosa que un entero)*/
 }while((a.carrera!=1)&&(a.carrera!=2)&&(a.carrera!=3)&&(a.carrera!=4)&&(a.carrera!=5));
 
-pf = fopen("C:/Users/Diego/Desktop/trabajo/carreras.txt", "a");
+pf = fopen("carreras.txt", "a");
 		fprintf(pf, "%i,",a.carrera);
 			fclose(pf);
 }
@@ -108,7 +108,7 @@ int	matriculaexistente(usuario a,contenido f,opciones m,int *x,FILE *pf){
 	printf("Introduce tu numero de matricula\t");
 	scanf("%i",&a.matricula);
 	
-		pf = fopen("C:/Users/Diego/Desktop/trabajo/matriculas.txt", "r");
+		pf = fopen("matriculas.txt", "r");
 if (pf == NULL)
 {// Si el resultado es NULL mensaje de error
 printf("Error al abrir el fichero.\n");
@@ -154,7 +154,7 @@ int imprimir_datos_usuario(contenido f,int posicion,FILE *pf1,FILE *pf2,FILE *pf
 	int suma1=0,suma2=0;
 			//usamos h para los siguientes "for"
 			int h=0;
-			pf2 = fopen("C:/Users/Diego/Desktop/trabajo/longitudstrings.txt", "r");
+			pf2 = fopen("longitudstrings.txt", "r");
 			
 			
 			for(h=0;h<(posicion);h++)
@@ -175,7 +175,7 @@ int imprimir_datos_usuario(contenido f,int posicion,FILE *pf1,FILE *pf2,FILE *pf
 			
 			fclose(pf2);
 	
-			pf1 = fopen("C:/Users/Diego/Desktop/trabajo/nombre.txt", "r");
+			pf1 = fopen("nombre.txt", "r");
 				//Aqui es donde imprimimos uno por uno los caracteres del intervalo descrito anteriormente para el nombre del usuario
 			if (pf1 == NULL)
 	{// Si el resultado es NULL mensaje de error
@@ -196,7 +196,7 @@ int imprimir_datos_usuario(contenido f,int posicion,FILE *pf1,FILE *pf2,FILE *pf
 				
 				
 		//Aqui pf3 corresponde realmente a la direccion de puntero pf4 en el programa principal
-		pf3 = fopen("C:/Users/Diego/Desktop/trabajo/carreras.txt", "r");
+		pf3 = fopen("carreras.txt", "r");
 		//Debemos crear un bucle for que empiece desde 0 para que asigne a cada valor su posicion real en el fscanf 
 		for(h=0;h<100;h++){
 				fscanf(pf3, "%i,",&f.carrera[h]);	
@@ -222,73 +222,19 @@ int imprimir_datos_usuario(contenido f,int posicion,FILE *pf1,FILE *pf2,FILE *pf
 					getch();
 }
 
-clases(clase a,FILE *pf){
-	int h,r=0;
-	char lunes[10]="Monday",martes[10]="Tuesday",miercoles[10]="Wednesday",jueves[10]="Thursday",viernes[10]="Friday";
-
-
-/* funcion time que recibe como parametro un puntero nulo
---> devuelve el tiempo en una variable de tipo time_t*/
-time_t t=time(0);
-/*funcion localtime recime como parametro un puntero 
-t de variable time_t --> devuelve un puntero (horalocal) hacia la estructura de tipo tm*/	
-struct tm *local=localtime(&t);
-//definimos una cadena de caracteres dodne se va a almacenar la informacion final
-char dia[10];
-  
-strftime(dia,9,"%A",local);
-
-	pf = fopen("C:/Users/Diego/Desktop/trabajo/clase.txt","r");
-				//Aqui es donde imprimimos uno por uno los caracteres del intervalo descrito anteriormente para el nombre del usuario
-			if (pf == NULL)
+tutoria(clase a,FILE *pf){
+	int h;//parametro h como podria haber sido cualquier otra letra
+	
+	pf = fopen("tutorias.txt","r");
+		if (pf == NULL)
 	{// Si el resultado es NULL mensaje de error
 	printf("Error al abrir el fichero.\n");
 	return -1;
 	}
-	else
-	{
-			if ((strcmp(lunes,dia))==0){
-		r=1;
-				for(h=0;h<78;h++)
-			{
-					fscanf(pf,"%c,",&a.horario[h]);
-			
-				printf("%c",a.horario[h]);
-			}}
-			if ((strcmp(martes,dia))==0){
-		r=1;
-				for(h=0;h<158;h++)
-			{
-					fscanf(pf,"%c,",&a.horario[h]);
-			if(h>=79&&h<135) printf("%c",a.horario[h]);
-			}}
-			if ((strcmp(miercoles,dia))==0){
-		r=1;
-				for(h=0;h<500;h++)
-			{
-					fscanf(pf,"%c,",&a.horario[h]);
-			if(h>=135&&h<200) printf("%c",a.horario[h]);
-			}}
-				if ((strcmp(jueves,dia))==0){
-		r=1;
-				for(h=0;h<500;h++)
-			{
-					fscanf(pf,"%c,",&a.horario[h]);
-			if(h>=200&&h<272) printf("%c",a.horario[h]);
-			}}
-			if ((strcmp(viernes,dia))==0){
-		r=1;
-				for(h=0;h<500;h++)
-			{
-					fscanf(pf,"%c,",&a.horario[h]);
-			if(h>=272&&h<367) printf("%c",a.horario[h]);
-			
-			}}
-			if(r=0)
-			printf("Es fin de semana no tienes claseee!!!");
-
-			fclose(pf);
-			
-		}
-		getch();
+	else{
+		for(h=0;h<=1000;h++){
+				fscanf(pf, "%c",&a.tutorias[h]);
+					printf("%c",a.tutorias[h]);
+	}}
+	fclose(pf);
 }
