@@ -31,7 +31,7 @@ opciones menu;
 clase etsidi;
 
 
-/*el usuario debera dar su nombre,apellidos, nº de matricula y carrera 
+/*el usuario debera dar su nombre,apellidos, nÂº de matricula y carrera 
 (estos corresponden a los siguientes enteros y strings definidos)*/
 
 /*bucle do while para que se repite siempre el menu hasta
@@ -62,7 +62,7 @@ switch(menu.opcion)
 		fprintf(pf3, "%i,",alumno.matricula);
 			fclose(pf3);
 	
-	//En esta función se guardan el nombre e apellido en un fichero y se cuenta la longitud de estas para meterlas en otro fichero
+	//En esta funciÃ³n se guardan el nombre e apellido en un fichero y se cuenta la longitud de estas para meterlas en otro fichero
 	guarda_nomb_apelli(alumno,pf1,pf2);
 
 	//Aqui se realiza la seleccion de la carrera por parte del usuario y sera guardado en un fichero
@@ -77,15 +77,15 @@ switch(menu.opcion)
 	 el conjunto de datos de un un usuario a su matricula*/
 
 	/*Si la matricula no esta registrada el programa vuelve a enviar al usuario al menu principal,
-	si esta registrada se mantiene en el case 2 y abrirá otro switch-case*/
+	si esta registrada se mantiene en el case 2 y abrirÃ¡ otro switch-case*/
 	
-	/*posicion nos dará la posición de la matricula dentro del vector matricula (y la posicion del nº asociado a la carrera)
-	matri es la matricula que va a escribir el usuario para comparar con las matrículas ya registradas*/
+	/*posicion nos darÃ¡ la posiciÃ³n de la matricula dentro del vector matricula (y la posicion del nÂº asociado a la carrera)
+	matri es la matricula que va a escribir el usuario para comparar con las matrÃ­culas ya registradas*/
 	int posicion;
 	
 	menu.opcion=matriculaexistente(alumno,fichero,menu,&posicion,pf3);
 
-	//if descrito en la funcion anterior que solo se cumple cuando la matrícula esta registrada
+	//if descrito en la funcion anterior que solo se cumple cuando la matrÃ­cula esta registrada
 	if(menu.opcion==2)
 	{
 	
@@ -135,8 +135,7 @@ switch(menu.opcion)
 						case 3:
 							{
 								system("cls");
-								printf("Estas volviendo al menu anterior");
-								sleep(2);
+						
 							}
 							break;
 						default:
@@ -175,9 +174,9 @@ switch(menu.opcion)
   		char hora[10];
  		 char dia[10];
   
-  		/*funcion strftime con 1º parametro la cadena definida,2º su longitud,
-  		3º cadena de formateo implementada con #include <time.h>  
-	  	y 4º el puntero que señala la estructura que contiene el tiempo que queremos formatear*/
+  		/*funcion strftime con 1Âº parametro la cadena definida,2Âº su longitud,
+  		3Âº cadena de formateo implementada con #include <time.h>  
+	  	y 4Âº el puntero que seÃ±ala la estructura que contiene el tiempo que queremos formatear*/
 	  strftime(hora, 99, "%H:%M:%S",local );
 		  strftime(dia,9,"%A",local);
  		 //finalmente imprimimos la cadena de caracteres hora
@@ -189,8 +188,7 @@ switch(menu.opcion)
 			case 5:
 				{
 					system("cls");
-					printf("Estas volviendo al menu anterior");
-					sleep(2);
+					
 				}
 				break;
 			default:
