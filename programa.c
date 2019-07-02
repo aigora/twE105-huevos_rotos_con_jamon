@@ -48,7 +48,6 @@ switch(menu.opcion)
 {
 		case 1:
 	{
-		
 	/* system("cls") sirve para limpiar de la ventana lo que estaba escrito anteriormente para tener un 
 	programa mas legible*/
 	system("cls");
