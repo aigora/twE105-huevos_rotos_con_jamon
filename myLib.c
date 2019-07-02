@@ -4,10 +4,16 @@
 
 int verificamatricula(usuario a,contenido f,opciones m,int *h, FILE *pf){
 int w=0;
+	//crea por primera vez el fichero matriculas dentro de la carpeta donde esta guardado el programa
+		
 		pf = fopen("matriculas.txt", "r");
 if (pf == NULL)
-{// Si el resultado es NULL mensaje de error
-printf("Error al abrir el fichero.\n");
+{
+printf("Al ser esta la primera vez que se usa el programa\nesta primera entrada sirve para crear los ficheros de guardado.\n\n\tPor favor vuelva a intentar registrarse a continuacion.\n");
+//Al dar error significa que el fichero no existe
+	pf = fopen("matriculas.txt", "w");
+	fclose(pf);
+getch();
 return -1;
 }
 else
@@ -105,17 +111,22 @@ int	matriculaexistente(usuario a,contenido f,opciones m,int *x,FILE *pf){
 	/*volvemos a poner posicion dentro de la función para que se entienda mejor*/
 		int j=0,n=0,posicion; 
 	
-	printf("Introduce tu numero de matricula\t");
-	scanf("%i",&a.matricula);
-	
+
 		pf = fopen("matriculas.txt", "r");
 if (pf == NULL)
-{// Si el resultado es NULL mensaje de error
-printf("Error al abrir el fichero.\n");
+{
+printf("Al ser esta la primera vez que se usa el programa\nesta primera entrada sirve para crear los ficheros de guardado.\n\n\tPor favor vuelva a probar a continuacion.\n");
+//Al dar error significa que el fichero no existe
+	pf = fopen("matriculas.txt", "w");
+	fclose(pf);
+getch();
 return -1;
 }
 else
 {
+	printf("Introduce tu numero de matricula\t");
+	scanf("%i",&a.matricula);
+	
 	for(j;j<100;j++)
 	{
 		fscanf(pf,"%i,",&f.matricula[j]);
@@ -232,7 +243,7 @@ tutoria(clase a,FILE *pf){
 	return -1;
 	}
 	else{
-		for(h=0;h<=1000;h++){
+		for(h=0;h<=845;h++){
 				fscanf(pf, "%c",&a.tutorias[h]);
 					printf("%c",a.tutorias[h]);
 	}}
