@@ -135,7 +135,6 @@ switch(menu.opcion)
 						case 3:
 							{
 								system("cls");
-						
 							}
 							break;
 						default:
@@ -188,7 +187,6 @@ switch(menu.opcion)
 			case 5:
 				{
 					system("cls");
-					
 				}
 				break;
 			default:
