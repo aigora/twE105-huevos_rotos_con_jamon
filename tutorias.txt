@@ -11,7 +11,7 @@ Despachos: A-222; B-435
 
 Lunes: 11:30-12:00; 14:00-14:30
 
-Miércoles: 8:30-12:00
+Miercoles: 8:30-12:00
 
 Jueves: 11:30-13:00
 
@@ -48,7 +48,7 @@ Despacho: C101
 
 Martes: 12:00-14:00
 
-Miércoles: 12:00-14:00
+Miercoles: 12:00-14:00
 
 Jueves: 12:00-14:00
 
@@ -57,18 +57,18 @@ Despacho:A417
 
 Martes: 10:00-13:00
 
-Miércoles: 10:00-13:00
+Miercoles: 10:00-13:00
 
 			Metodos
 Despacho:C103
 
 Martes: 09:30-12:30
 
-Miércoles:09:30-12:30
+Miercoles:09:30-12:30
 
 			Quimica
 Despacho:A339
 
-Miércoles: 10:30-13:30
+Miercoles: 10:30-13:30
 
 Jueves: 10:30-13:30
